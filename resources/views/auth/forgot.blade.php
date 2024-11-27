@@ -74,17 +74,11 @@
                     </div>
 
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" type="submit">Forgot</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="{{ route('register') }}">Create an account</a></p>
-                      <p class="small mb-0" style="margin-top: 20px"><a href="{{ route('forgot.password') }}">I Forgot My Password</a></p>
+                      <p class="small mb-0" style="margin-top: 20px"><a href="{{ route('login') }}">Login</a></p>
                     </div>
                   </form>
 
