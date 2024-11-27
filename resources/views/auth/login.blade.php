@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="{{ route('register') }}">Create an account</a></p>
-                      <p class="small mb-0" style="margin-top: 20px"><a href="{{ route('forgot-password') }}">I Forgot My Password</a></p>
+                      <p class="small mb-0" style="margin-top: 20px"><a href="{{ route('forgot.password') }}">I Forgot My Password</a></p>
                     </div>
                   </form>
 
