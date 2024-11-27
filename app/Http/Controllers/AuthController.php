@@ -16,4 +16,9 @@ class AuthController extends Controller
         $data['meta_title'] = 'Register';
         return view('auth.register', $data);
     }
+
+    public function forgotPassword()
+    {
+        return view("auth.forgot");
+    }
 }
