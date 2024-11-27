@@ -13,6 +13,7 @@ class AuthController extends Controller
 
     public function register()
     {
-        return view('auth.register');
+        $data['meta_title'] = 'Register';
+        return view('auth.register', $data);
     }
 }
