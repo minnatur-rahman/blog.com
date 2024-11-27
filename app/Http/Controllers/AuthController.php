@@ -8,7 +8,8 @@ class AuthController extends Controller
 {
     public function login()
     {
-        return view('auth.login');
+        $data['meta_title'] = 'Login';
+        return view('auth.login', $data);
     }
 
     public function register()
@@ -19,6 +20,7 @@ class AuthController extends Controller
 
     public function forgotPassword()
     {
+        $data['meta_title'] = 'Register';
         return view("auth.forgot");
     }
 }
