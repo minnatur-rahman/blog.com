@@ -103,7 +103,7 @@
           <a href="" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
-          <img class="img-fluid mt-5" src="img/header.png" alt="" />
+          <img class="img-fluid mt-5" src="{{url('front/img/header.png')}}" alt="" />
         </div>
       </div>
     </div>
@@ -244,7 +244,7 @@
             </p>
             <div class="row pt-2 pb-4">
               <div class="col-6 col-md-4">
-                <img class="img-fluid rounded" src="img/about-2.jpg" alt="" />
+                <img class="img-fluid rounded" src="{{url('img/about-2.jpg')}}" alt="" />
               </div>
               <div class="col-6 col-md-8">
                 <ul class="list-inline m-0">
@@ -282,7 +282,7 @@
         <div class="row">
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-1.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('img/class-1.jpg')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">Drawing Class</h4>
                 <p class="card-text">
@@ -321,7 +321,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-2.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('img/class-2.jpg')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">Language Learning</h4>
                 <p class="card-text">
