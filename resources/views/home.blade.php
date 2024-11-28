@@ -8,7 +8,7 @@
     <meta content="Free HTML Templates" name="description" />
 
     <!-- Favicon -->
-    <link href="front/img/favicon.ico" rel="icon" />
+    <link href="{{ url('front/img/favicon.ico') }}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -227,7 +227,7 @@
           <div class="col-lg-5">
             <img
               class="img-fluid rounded mb-5 mb-lg-0"
-              src="img/about-1.jpg"
+              src="{{url('front/img/about-1.jpg')}}"
               alt=""
             />
           </div>
@@ -244,7 +244,7 @@
             </p>
             <div class="row pt-2 pb-4">
               <div class="col-6 col-md-4">
-                <img class="img-fluid rounded" src="{{url('img/about-2.jpg')}}" alt="" />
+                <img class="img-fluid rounded" src="{{url('front/img/about-2.jpg')}}" alt="" />
               </div>
               <div class="col-6 col-md-8">
                 <ul class="list-inline m-0">
@@ -282,7 +282,7 @@
         <div class="row">
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="{{url('img/class-1.jpg')}}" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/class-1.jpg')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">Drawing Class</h4>
                 <p class="card-text">
@@ -321,7 +321,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="{{url('img/class-2.jpg')}}" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/class-2.jpg')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">Language Learning</h4>
                 <p class="card-text">
@@ -360,7 +360,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-3.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/class-3.jpg')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">Basic Science</h4>
                 <p class="card-text">
@@ -499,7 +499,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" src="img/team-1.jpg" alt="" />
+              <img class="img-fluid w-100" src="{{url('front/img/team-1.jpg')}}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -531,7 +531,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" src="img/team-2.jpg" alt="" />
+              <img class="img-fluid w-100" src="{{url('front/img/team-2.jpg')}}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -563,7 +563,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" src="img/team-3.jpg" alt="" />
+              <img class="img-fluid w-100" src="{{url('front/img/team-3.jpg')}}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -595,7 +595,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" src="img/team-4.jpg" alt="" />
+              <img class="img-fluid w-100" src="{{url('front/img/team-4.jpg')}}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -646,7 +646,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-1.jpg"
+                src="{{url('front/img/testimonial-1.jpg')}}"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -665,7 +665,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-2.jpg"
+                src="{{url('front/img/testimonial-2.jpg')}}"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -684,7 +684,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-3.jpg"
+                src="{{url('front/img/testimonial-3.jpg')}}"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -703,7 +703,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-4.jpg"
+                src="{{url('front/img/testimonial-4.jpg')}}"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -730,7 +730,7 @@
         <div class="row pb-3">
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
-              <img class="card-img-top mb-2" src="img/blog-1.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/blog-1.jpg')}}" alt="" />
               <div class="card-body bg-light text-center p-4">
                 <h4 class="">Diam amet eos at no eos</h4>
                 <div class="d-flex justify-content-center mb-3">
@@ -757,7 +757,7 @@
           </div>
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
-              <img class="card-img-top mb-2" src="img/blog-2.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/blog-2.jpg')}}" alt="" />
               <div class="card-body bg-light text-center p-4">
                 <h4 class="">Diam amet eos at no eos</h4>
                 <div class="d-flex justify-content-center mb-3">
@@ -784,7 +784,7 @@
           </div>
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
-              <img class="card-img-top mb-2" src="img/blog-3.jpg" alt="" />
+              <img class="card-img-top mb-2" src="{{url('front/img/blog-3.jpg')}}" alt="" />
               <div class="card-body bg-light text-center p-4">
                 <h4 class="">Diam amet eos at no eos</h4>
                 <div class="d-flex justify-content-center mb-3">
@@ -970,10 +970,6 @@
     <script src="{{url('front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{url('front/lib/isotope/isotope.pkgd.min.js')}}"></script>
     <script src="{{url('front/lib/lightbox/js/lightbox.min.js')}}"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="{{url('front/mail/jqBootstrapValidation.min.js')}}"></script>
-    <script src="{{url('front/mail/contact.js')}}"></script>
 
     <!-- Template Javascript -->
     <script src="{{url('front/js/main.js')}}"></script>
