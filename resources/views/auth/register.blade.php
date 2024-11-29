@@ -65,6 +65,8 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
+                  <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
+                    @csrf
 
                   @if ($errors->any())
                       <div class="alert alert-danger">
@@ -76,8 +78,6 @@
                       </div>
                   @endif
 
-                  <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
-                    @csrf
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your Name</label>
                       <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="yourName" required>
@@ -106,9 +106,7 @@
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" id="acceptTerms" required>
                         <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                        @error('terms')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                       
                       </div>
                     </div>
                     <div class="col-12">
