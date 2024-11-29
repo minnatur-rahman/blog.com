@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,10 +22,18 @@ class AuthController extends Controller
 
     public function register_user(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'name' => 'required|unique:posts|max:255',
-            'email' => 'required',
+            'email' => 'required|unique:users',        
         ]);
+
+        $save = new User;
+        $save->name = $request->name;
+        $save->email = $request->email;
+        $save->password = Hash::make($request->password);
+        $save->save();
+
+        return redirect()->route('login')->with('success', 'Your Account Register Successfully.');
     }
 
     public function forgotPassword()
