@@ -18,6 +18,14 @@ class AuthController extends Controller
         return view('auth.register', $data);
     }
 
+    public function register_user(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:posts|max:255',
+            'email' => 'required',
+        ]);
+    }
+
     public function forgotPassword()
     {
         $data['meta_title'] = 'Forgot Password';
