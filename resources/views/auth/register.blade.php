@@ -65,19 +65,19 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
-                    @csrf
-
-                  @if ($errors->any())
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                              @endforeach
-                          </ul>
-                      </div>
+                  @if (session()->has('success'))
+                  <div class="alert alert-success">
+                      {{ session()->get('success') }}
+                  </div>
+                  @endif
+                  @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
                   @endif
 
+                  <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
+                    @csrf
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your Name</label>
                       <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="yourName" required>

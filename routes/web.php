@@ -12,5 +12,5 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::get('register', [AuthController::class, 'register'])->name("register");
-Route::post('register-user', [AuthController::class, 'register_user'])->name("register.user");
+Route::post('register-user', [AuthController::class, 'register_user'])->name("register.user")->middleware('web');;
 Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
