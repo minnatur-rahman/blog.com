@@ -32,9 +32,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url('front/css/style.css') }}" rel="stylesheet" />
-    {{-- toaster --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+   
 
     @yield('style')
   </head>
@@ -53,17 +51,6 @@
       ><i class="fa fa-angle-double-up"></i
     ></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{{url('front/lib/easing/easing.min.js')}}"></script>
-    <script src="{{url('front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-    <script src="{{url('front/lib/isotope/isotope.pkgd.min.js')}}"></script>
-    <script src="{{url('front/lib/lightbox/js/lightbox.min.js')}}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{url('front/js/main.js')}}"></script>
-
     <script>
       @if (session('success'))
           toastr.success("{{ session('success') }}");
@@ -77,7 +64,27 @@
       @if (session('warning'))
           toastr.warning("{{ session('warning') }}");
       @endif
+
+      toastr.options = {
+          "closeButton": true,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "timeOut": "5000"
+      };
   </script>
+  
+    <!-- JavaScript Libraries -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url('front/lib/easing/easing.min.js')}}"></script>
+    <script src="{{url('front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{url('front/lib/isotope/isotope.pkgd.min.js')}}"></script>
+    <script src="{{url('front/lib/lightbox/js/lightbox.min.js')}}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{url('front/js/main.js')}}"></script>
+
+  
+   
 
     @yield('script')
   </body>
