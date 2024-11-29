@@ -24,7 +24,9 @@ class AuthController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'email' => 'required|unique:users',        
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' =>'required',        
         ]);
 
         $save = new User;
@@ -33,7 +35,7 @@ class AuthController extends Controller
         $save->password = Hash::make($request->password);
         $save->save();
 
-        return redirect()->route('login')->with('success', 'Your Account Register Successfully.');
+        return redirect('login')->with('success', 'Your Account Register Successfully.');
     }
 
     public function forgotPassword()
