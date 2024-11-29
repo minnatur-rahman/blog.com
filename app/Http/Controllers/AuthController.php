@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -23,19 +24,25 @@ class AuthController extends Controller
     public function register_user(Request $request)
     {
         // dd($request->all());
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'password' =>'required',        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+            'terms' => 'accepted',        
         ]);
 
-        $save = new User;
-        $save->name = $request->name;
-        $save->email = $request->email;
-        $save->password = Hash::make($request->password);
-        $save->save();
-
-        return redirect('login')->with('success', 'Your Account Register Successfully.');
+        if ($validator->fails()) {
+            // dd($validator->errors()->all());
+            return back()->withErrors($validator)->withInput();
+        }
+       
+            $save = new User;
+            $save->name = $request->name;
+            $save->email = $request->email;
+            $save->password = Hash::make($request->password);
+            $save->save();
+    
+            return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
     }
 
     public function forgotPassword()

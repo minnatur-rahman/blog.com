@@ -65,31 +65,50 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
+
+                  @if ($errors->any())
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
+
                   <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
                     @csrf
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your Name</label>
                       <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="yourName" required>
-                      <div style="color: red">{{ $errors->first('name') }}</div>
+                      @error('name')
+                         <div class="text-danger">{{ $message }}</div>
+                      @enderror
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
                       <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="yourEmail" required>
-                      <div style="color: red">{{ $errors->first('email') }}</div>
+                      @error('email')
+                           <div class="text-danger">{{ $message }}</div>
+                      @enderror
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div style="color: red">{{ $errors->first('password') }}</div>
+                      @error('password')
+                         <div class="text-danger">{{ $message }}</div>
+                      @enderror
                     </div>
 
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" id="acceptTerms" required>
                         <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                        <div class="invalid-feedback">You must agree before submitting.</div>
+                        @error('terms')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-12">
