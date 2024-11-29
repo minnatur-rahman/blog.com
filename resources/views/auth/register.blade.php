@@ -64,17 +64,12 @@
                     <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
-
-                  @if (session()->has('success'))
-                  <div class="alert alert-success">
-                      {{ session()->get('success') }}
+                
+                @if (!empty(session('errors')))
+                  <div class="alert alert-danger" role="alert">
+                      {{ session('errors') }}
                   </div>
-                  @endif
-                  @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                  @endif
+                @endif
 
                   <form class="row g-3 needs-validation" action="{{ route('register.user') }}" method="POST">
                     @csrf

@@ -65,6 +65,8 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
+                  @include('layouts._message')
+
                   <form class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">

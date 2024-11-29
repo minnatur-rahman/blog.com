@@ -32,6 +32,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url('front/css/style.css') }}" rel="stylesheet" />
+    {{-- toaster --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     @yield('style')
   </head>
@@ -60,6 +63,21 @@
 
     <!-- Template Javascript -->
     <script src="{{url('front/js/main.js')}}"></script>
+
+    <script>
+      @if (session('success'))
+          toastr.success("{{ session('success') }}");
+      @endif
+      @if (session('error'))
+          toastr.error("{{ session('error') }}");
+      @endif
+      @if (session('info'))
+          toastr.info("{{ session('info') }}");
+      @endif
+      @if (session('warning'))
+          toastr.warning("{{ session('warning') }}");
+      @endif
+  </script>
 
     @yield('script')
   </body>
