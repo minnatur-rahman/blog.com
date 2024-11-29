@@ -32,6 +32,11 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url('front/css/style.css') }}" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
 
     @yield('style')
@@ -50,28 +55,6 @@
       <a href="#" class="btn btn-primary p-3 back-to-top"
       ><i class="fa fa-angle-double-up"></i
     ></a>
-
-    <script>
-      @if (session('success'))
-          toastr.success("{{ session('success') }}");
-      @endif
-      @if (session('error'))
-          toastr.error("{{ session('error') }}");
-      @endif
-      @if (session('info'))
-          toastr.info("{{ session('info') }}");
-      @endif
-      @if (session('warning'))
-          toastr.warning("{{ session('warning') }}");
-      @endif
-
-      toastr.options = {
-          "closeButton": true,
-          "progressBar": true,
-          "positionClass": "toast-top-right",
-          "timeOut": "5000"
-      };
-  </script>
   
     <!-- JavaScript Libraries -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
