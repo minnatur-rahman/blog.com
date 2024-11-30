@@ -7,4 +7,7 @@
 
     <p>In case you have issues please contact us.</p>
 
+    Thanks <br/>
+    {{ config('app.name') }}
+
 @endcomponent
