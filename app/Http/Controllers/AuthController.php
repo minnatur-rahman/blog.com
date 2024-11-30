@@ -24,32 +24,62 @@ class AuthController extends Controller
         return view('auth.register', $data);
     }
 
+    // public function register_user(Request $request)
+    // {
+    //     // dd($request->all());
+    //     $validator = Validator::make($request->all(), [
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|email|unique:users,email',
+    //         'password' => 'required|min:6',
+                  
+    //     ]);
+
+    //     if ($validator->fails()) {
+    //         // dd($validator->errors()->all());
+    //         return back()->withErrors($validator)->withInput();
+    //     }
+       
+    //         $save = new User;
+    //         $save->name = $request->name;
+    //         $save->email = $request->email;
+    //         $save->password = Hash::make($request->password);
+    //         $save->remember_token = Str::random(40);         
+    //         $save->save();
+
+    //         Mail::to($save->mail)->send(new RegisterMail($save));
+    
+    //         return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
+    // }
+
+
+    
+
     public function register_user(Request $request)
     {
-        // dd($request->all());
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+        $request->validate([
+            'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
-                  
+            'password' => 'required|min:8',
+            'terms' => 'accepted',
         ]);
 
-        if ($validator->fails()) {
-            // dd($validator->errors()->all());
-            return back()->withErrors($validator)->withInput();
-        }
-       
-            $save = new User;
-            $save->name = $request->name;
-            $save->email = $request->email;
-            $save->password = Hash::make($request->password);
-            $save->remember_token = Str::random(40);         
-            $save->save();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
 
-            Mail::to($save->mail)->send(new RegisterMail($save));
-    
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
+        $recipientEmail = $request->email;
+
+        if (!$recipientEmail) {
+            throw new \Exception('Recipient email is missing.');
+        }
+
+        Mail::to($recipientEmail)->send(new RegisterMail($user));
+
+        return redirect()->route('login')->with('success', 'Your Account Register Successfully.');
     }
+
 
     public function forgotPassword()
     {
