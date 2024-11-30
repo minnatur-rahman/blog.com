@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\RegisterMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -40,6 +43,8 @@ class AuthController extends Controller
             $save->name = $request->name;
             $save->email = $request->email;
             $save->password = Hash::make($request->password);
+            $save->remember_token = Str::random(40);
+            
             $save->save();
     
             return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
