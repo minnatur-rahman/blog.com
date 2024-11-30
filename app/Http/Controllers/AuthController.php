@@ -77,7 +77,7 @@ class AuthController extends Controller
 
         Mail::to($recipientEmail)->send(new RegisterMail($user));
 
-        return redirect()->route('login')->with('success', 'Your Account Register Successfully.');
+        return redirect('login')->with('success', 'Your Account Register Successfully and varified your email address.');
     }
 
 
