@@ -43,9 +43,10 @@ class AuthController extends Controller
             $save->name = $request->name;
             $save->email = $request->email;
             $save->password = Hash::make($request->password);
-            $save->remember_token = Str::random(40);
-            
+            $save->remember_token = Str::random(40);         
             $save->save();
+
+            Mail::to($save->mail)->send(new RegisterMail($save));
     
             return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
     }
