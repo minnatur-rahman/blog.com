@@ -52,6 +52,9 @@ class AuthController extends Controller
     // }
 
 
+
+   
+
     
 
     public function register_user(Request $request)
@@ -81,9 +84,29 @@ class AuthController extends Controller
     }
 
 
-    public function forgotPassword()
+    // public function forgotPassword()
+    // {
+    //     $data['meta_title'] = 'Forgot Password';
+    //     return view("auth.forgot", $data);
+    // }
+
+
+    public function forgot_password(Request $request)
     {
-        $data['meta_title'] = 'Forgot Password';
-        return view("auth.forgot", $data);
+        // dd($request->all());
+
+        $count = User::where('email', '=', $request->email)->count();
+        if($count > 0){
+            $user = User::where('email', '=', $request->email)->first();
+            $user->remember_token = Str::random(50);
+            $user->save();
+
+            Mail::to($user->email)->send(new RegisterMail($user));
+
+            return redirect()->back()->with('success', 'Password has been reset. Please check your SPAM or junk mail folder.');
+        }else{
+            return redirect()->back()->withInput()->with('error', 'Email not found in the system.');
+        }
+
     }
 }

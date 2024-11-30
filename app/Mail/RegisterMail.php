@@ -14,33 +14,32 @@ class RegisterMail extends Mailable
     use Queueable, SerializesModels;
     public $user;
 
-    /**
-     * Create a new message instance.
-     */
     public function __construct($user)
     {
         $this->user = $user;
     }
 
-    /**
-     * Get the message envelope.
-     */
+    public function build (){
+        return $this->markdown('emails.forgot_password')->subject(config('app.name') . 'Forgot Password');
+    }
+
+   
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Email Validation',
+            subject: 'Forgot Password Mail',
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
+  
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.register',
+            view: 'view.name',
         );
     }
+
+
 
     /**
      * Get the attachments for the message.
