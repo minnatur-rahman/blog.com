@@ -67,11 +67,11 @@
 
                   @include('layouts._message')
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form class="row g-3 needs-validation" action="{{ route('') }}" method="POST">
+                    @csrf
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Email</label>                     
-                        <input type="text" name="email" class="form-control" id="yourEmail" required>                      
+                        <input type="email" name="email" class="form-control" id="yourEmail" required>                      
                     </div>
 
                     <div class="col-12">
