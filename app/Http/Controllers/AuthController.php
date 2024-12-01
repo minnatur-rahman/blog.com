@@ -61,7 +61,14 @@ class AuthController extends Controller
     public function verify($token)
     {
         $user = User::where('remember_token', '=', $token)->first();
-        
+        if(!empty($user))
+        {
+
+        }
+        else
+        {
+            abort(404);
+        }
     }
 
 }
