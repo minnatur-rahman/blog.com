@@ -25,6 +25,12 @@ class AuthController extends Controller
         return view('auth.register', $data);
     }
 
+    public function forgotPassword()
+    {
+        $data['meta_title'] = 'Forgot Password';
+        return view("auth.forgot", $data);
+    }
+
     public function register_user(Request $request)
     {
         // dd($request->all());
@@ -49,13 +55,13 @@ class AuthController extends Controller
 
             Mail::to($save->email)->send(new RegisterMail($save));
     
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
+            return redirect()->route('login')->with('success', 'Your Account Register Successfully and verified your email address.');     
     }
 
-    public function forgotPassword()
+    public function verify($token)
     {
-        $data['meta_title'] = 'Forgot Password';
-        return view("auth.forgot", $data);
+        $user = User::where('remember_token', '=', $token)->first();
+        
     }
 
 }
