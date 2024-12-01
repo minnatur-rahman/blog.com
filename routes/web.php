@@ -15,3 +15,4 @@ Route::get('register', [AuthController::class, 'register'])->name("register");
 Route::post('register-user', [AuthController::class, 'register_user'])->name("register.user");
 
 Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
+Route::post('forgot-post', [AuthController::class, 'forgot_post'])->name('forgot.post');

@@ -24,74 +24,38 @@ class AuthController extends Controller
         return view('auth.register', $data);
     }
 
-    // public function register_user(Request $request)
-    // {
-    //     // dd($request->all());
-    //     $validator = Validator::make($request->all(), [
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|email|unique:users,email',
-    //         'password' => 'required|min:6',
-                  
-    //     ]);
-
-    //     if ($validator->fails()) {
-    //         // dd($validator->errors()->all());
-    //         return back()->withErrors($validator)->withInput();
-    //     }
-       
-    //         $save = new User;
-    //         $save->name = $request->name;
-    //         $save->email = $request->email;
-    //         $save->password = Hash::make($request->password);
-    //         $save->remember_token = Str::random(40);         
-    //         $save->save();
-
-    //         Mail::to($save->mail)->send(new RegisterMail($save));
-    
-    //         return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
-    // }
-
-
-
-   
-
-    
-
     public function register_user(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8',
-            'terms' => 'accepted',
+            'password' => 'required|min:6',
+                  
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
-
-        $recipientEmail = $request->email;
-
-        if (!$recipientEmail) {
-            throw new \Exception('Recipient email is missing.');
+        if ($validator->fails()) {
+            // dd($validator->errors()->all());
+            return back()->withErrors($validator)->withInput();
         }
+       
+            $save = new User;
+            $save->name = $request->name;
+            $save->email = $request->email;
+            $save->password = Hash::make($request->password);         
+            $save->save();
+    
+            return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
+    }
 
-        Mail::to($recipientEmail)->send(new RegisterMail($user));
-
-        return redirect('login')->with('success', 'Your Account Register Successfully and varified your email address.');
+    public function forgotPassword()
+    {
+        $data['meta_title'] = 'Forgot Password';
+        return view("auth.forgot", $data);
     }
 
 
-    // public function forgotPassword()
-    // {
-    //     $data['meta_title'] = 'Forgot Password';
-    //     return view("auth.forgot", $data);
-    // }
-
-
-    public function forgot_password(Request $request)
+    public function forgot_post(Request $request)
     {
         // dd($request->all());
 
@@ -107,6 +71,5 @@ class AuthController extends Controller
         }else{
             return redirect()->back()->withInput()->with('error', 'Email not found in the system.');
         }
-
     }
 }
