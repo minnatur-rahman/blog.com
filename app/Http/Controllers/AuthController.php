@@ -63,7 +63,8 @@ class AuthController extends Controller
         $user = User::where('remember_token', '=', $token)->first();
         if(!empty($user))
         {
-
+            $user->email_verified_at = date('Y-m-d H:i:s');
+            $user->save();
         }
         else
         {
