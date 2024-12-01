@@ -31,6 +31,11 @@ class AuthController extends Controller
         return view("auth.forgot", $data);
     }
 
+    public function auth_login(Request $request)
+    {
+        dd($request->all());
+    }
+
     public function register_user(Request $request)
     {
         // dd($request->all());
