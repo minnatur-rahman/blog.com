@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\RegisterMail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Str;
 use Illuminate\Support\Facades\Mail;
@@ -33,7 +34,10 @@ class AuthController extends Controller
 
     public function auth_login(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $remember = !empty($request->remember) ? true : false;
+
+        if(Auth::attempt([]));
     }
 
     public function register_user(Request $request)
