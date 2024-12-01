@@ -55,7 +55,7 @@ class AuthController extends Controller
 
             Mail::to($save->email)->send(new RegisterMail($save));
     
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully and verified your email address.');     
+            return redirect()->route('login')->with('success', 'Your Account Register Successfully and verify your email address.');     
     }
 
     public function verify($token)
@@ -64,9 +64,10 @@ class AuthController extends Controller
         if(!empty($user))
         {
             $user->email_verified_at = date('Y-m-d H:i:s');
+            $user-> remember_token = Str::random(40);
             $user->save();
 
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully and verified your email address.');  
+            return redirect()->route('login')->with('success', 'Your Account Register Successfully verified.');  
         }
         else
         {
