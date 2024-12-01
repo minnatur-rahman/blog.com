@@ -37,7 +37,14 @@ class AuthController extends Controller
         // dd($request->all());
         $remember = !empty($request->remember) ? true : false;
 
-        if(Auth::attempt([]));
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember))
+        {
+
+        }
+        else
+        {
+            return redirect()->back()->with('error', 'Please enter correct email and password');
+        }
     }
 
     public function register_user(Request $request)
