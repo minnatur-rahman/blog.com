@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\RegisterMail;
+use Illuminate\Support\Facades\Hash;
+use Str;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+
 
 class AuthController extends Controller
 {
@@ -42,8 +43,11 @@ class AuthController extends Controller
             $save = new User;
             $save->name = $request->name;
             $save->email = $request->email;
-            $save->password = Hash::make($request->password);         
+            $save->password = Hash::make($request->password); 
+            $save-> remember_token = Str::random(40);        
             $save->save();
+
+            Mail::to($save->email)->send(new RegisterMail($save));
     
             return redirect()->route('login')->with('success', 'Your Account Register Successfully.');     
     }
@@ -54,22 +58,4 @@ class AuthController extends Controller
         return view("auth.forgot", $data);
     }
 
-
-    public function forgot_post(Request $request)
-    {
-        // dd($request->all());
-
-        $count = User::where('email', '=', $request->email)->count();
-        if($count > 0){
-            $user = User::where('email', '=', $request->email)->first();
-            $user->remember_token = Str::random(50);
-            $user->save();
-
-            Mail::to($user->email)->send(new RegisterMail($user));
-
-            return redirect()->back()->with('success', 'Password has been reset. Please check your SPAM or junk mail folder.');
-        }else{
-            return redirect()->back()->withInput()->with('error', 'Email not found in the system.');
-        }
-    }
 }

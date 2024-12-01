@@ -19,15 +19,15 @@ class RegisterMail extends Mailable
         $this->user = $user;
     }
 
-    public function build (){
-        return $this->markdown('emails.forgot_password')->subject(config('app.name') . 'Forgot Password');
-    }
+    // public function build (){
+    //     return $this->markdown('emails.forgot_password')->subject(config('app.name') . 'Forgot Password');
+    // }
 
    
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Forgot Password Mail',
+            subject: 'Email Validation',
         );
     }
 
@@ -35,7 +35,7 @@ class RegisterMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            markdown: 'emails.register',
         );
     }
 

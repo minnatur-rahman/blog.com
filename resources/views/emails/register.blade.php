@@ -5,10 +5,10 @@
     <p>It happens. Click the link below to reset your password.</p>
 
     @component('mail::button', ['url' => url('reset/'.$user->remember_token)])
-        Reset Your Password
+        Verify
     @endcomponent
 
-    <p>! in case you have any issue recovering your passcode, please contact us using the form contact-as page Thanls,</p> <br>
+    
 
     {{ config('app.name') }}
 
