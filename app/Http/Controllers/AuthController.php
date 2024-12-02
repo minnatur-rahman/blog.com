@@ -45,13 +45,13 @@ class AuthController extends Controller
           }
           else
           {
-            $save = new User;
+            $save = new User::getSingle(Auth::user()->id);
             $save-> remember_token = Str::random(40);        
             $save->save();
 
             Mail::to($save->email)->send(new RegisterMail($save));
     
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully and verify your email address.');    
+            return redirect()->route('login')->with('success', '.');    
           }
         }
         else

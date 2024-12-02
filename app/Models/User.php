@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    static function getSingle($id)
+    {
+        return self::find($id);
+    }
 }
