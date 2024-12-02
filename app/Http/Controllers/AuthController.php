@@ -34,7 +34,6 @@ class AuthController extends Controller
 
     public function auth_login(Request $request)
     {
-        // dd($request->all());
         $remember = !empty($request->remember) ? true : false;
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember))
@@ -43,7 +42,7 @@ class AuthController extends Controller
         }
         else
         {
-            return redirect('login')->with('error', 'Please enter correct email and password');
+            return redirect()->back()->with('error', 'Please enter correct email and password')->w;
         }
     }
 
