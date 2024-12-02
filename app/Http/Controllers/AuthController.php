@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function login($token)
     {
         $data['meta_title'] = 'Login';
-        return view('auth.login', $data);
+        return view('auth.login', ['token' => $token], $data);
     }
 
     public function register()
