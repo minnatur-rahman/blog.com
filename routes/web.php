@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('login/{token}', [AuthController::class, 'login'])->name('login');
+Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'auth_login']);
 Route::get('register', [AuthController::class, 'register'])->name("register");
 Route::post('register-user', [AuthController::class, 'register_user'])->name("register.user");
