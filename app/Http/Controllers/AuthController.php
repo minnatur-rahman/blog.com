@@ -38,11 +38,19 @@ class AuthController extends Controller
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember))
         {
+          if(!empty(Auth::user()->email_verified_at))
+          {
+            echo "successfully";
+            die;
+          }
+          else
+          {
 
+          }
         }
         else
         {
-            return redirect()->back()->with('error', 'Please enter correct email and password')->w;
+            return redirect()->back()->with('error', 'Please enter correct email and password');
         }
     }
 
