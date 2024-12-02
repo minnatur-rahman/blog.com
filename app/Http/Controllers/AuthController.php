@@ -45,13 +45,16 @@ class AuthController extends Controller
           }
           else
           {
-            $save = User::getSingle(Auth::user()->id);
+            $user_id = Auth::user()->id;
+            Auth::logout();
+
+            $save = User::getSingle($user_id);
             $save-> remember_token = Str::random(40);        
             $save->save();
 
             Mail::to($save->email)->send(new RegisterMail($save));
     
-            return redirect()->route('login')->with('success', 'please first you can verify your email address.');    
+            return redirect()->back()->with('success', 'please first you can verify your email address.');    
           }
         }
         else
