@@ -67,7 +67,7 @@
 
                   @include('layouts._message')
 
-                  <form class="row g-3 needs-validation" action="{{ route('verify.user', ['token' => $token]) }}" method="POST">
+                  <form class="row g-3 needs-validation" action="" method="POST">
                     @csrf
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Email</label>                     
