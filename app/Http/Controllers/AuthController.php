@@ -99,7 +99,7 @@ class AuthController extends Controller
             $user-> remember_token = Str::random(40);
             $user->save();
 
-            return redirect()->route('login')->with('success', 'Your Account Register Successfully verified.');  
+            return redirect('login')->with('success', 'Your Account Register Successfully verified.');  
         }
         else
         {
