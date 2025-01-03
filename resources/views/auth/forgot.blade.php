@@ -58,6 +58,7 @@
                     <p class="text-center small">Enter your email to forgot password</p>
                   </div>
 
+                  @include('layouts._message')
                   <form class="row g-3 needs-validation" action="" method="POST">
                     @csrf
                     <div class="col-12">

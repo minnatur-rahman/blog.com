@@ -37,12 +37,14 @@ class AuthController extends Controller
        $user = User::where('email', '=', $request->email)->first();
        if(!empty($user))
        {
-            $save-> remember_token = Str::random(40);        
-            $save->save();
+            $user-> remember_token = Str::random(40);        
+            $user->save();
+
+            
        }
        else
        {
-            return redirect()->back()->with('error', 'Email not found in the system');
+            return redirect()->back()->with('errors', 'Email not found in the system');
        }
     }
 
