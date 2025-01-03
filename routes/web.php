@@ -18,4 +18,6 @@ Route::get('verify/{token}', [AuthController::class, 'verify'])->name('verify.us
 
 Route::get('forgot-password', [AuthController::class, 'forgot'])->name('forgot');
 Route::post('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
+
+Route::get('reset/{token}', [AuthController::class, 'reset'])->name('reset');
   

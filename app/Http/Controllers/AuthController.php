@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ForgotPasswordMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -32,6 +33,19 @@ class AuthController extends Controller
         return view("auth.forgot", $data);
     }
 
+    public function reset($token)
+    {
+        $user = User::where('remember_token', '=', $token)->first();
+       if(!empty($user))
+       {
+            return view('auth.forgot');
+       }
+       else
+       {
+         abort(404);
+       }
+    }
+
     public function forgotPassword(Request $request)
     {
        $user = User::where('email', '=', $request->email)->first();
@@ -40,7 +54,9 @@ class AuthController extends Controller
             $user-> remember_token = Str::random(40);        
             $user->save();
 
-            
+            Mail::to($user->email)->send(new ForgotPasswordMail($user));
+
+            return redirect()->back()->with('success', 'please check your email and resset your password.');
        }
        else
        {
