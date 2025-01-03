@@ -26,10 +26,24 @@ class AuthController extends Controller
         return view('auth.register', $data);
     }
 
-    public function forgotPassword()
+    public function forgot()
     {
         $data['meta_title'] = 'Forgot Password';
         return view("auth.forgot", $data);
+    }
+
+    public function forgotPassword(Request $request)
+    {
+       $user = User::where('email', '=', $request->email)->first();
+       if(!empty($user))
+       {
+            $save-> remember_token = Str::random(40);        
+            $save->save();
+       }
+       else
+       {
+            return redirect()->back()->with('error', 'Email not found in the system');
+       }
     }
 
     public function auth_login(Request $request)

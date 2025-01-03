@@ -58,11 +58,11 @@
                     <p class="text-center small">Enter your email to forgot password</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form class="row g-3 needs-validation" action="" method="POST">
+                    @csrf
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control" required>
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" name="email" class="form-control" id="email" required>
                       <div class="invalid-feedback">Please enter your email</div>
                     </div>
 
