@@ -43,7 +43,7 @@ class AuthController extends Controller
             echo "successfully";
             die;
           }
-          else
+          else 
           {
             $user_id = Auth::user()->id;
             Auth::logout();
