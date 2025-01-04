@@ -22,8 +22,10 @@ class AuthMiddleware
         }
         else
         {
-            Auth::logout();
-            return redirect(route(''));
+
+            abort(404);
+            // Auth::logout();
+            // return redirect(route('panel/dashboard'));
         }
        
     }
