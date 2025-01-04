@@ -29,6 +29,8 @@
   <!-- Template Main CSS File -->
   <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
 
+  @yield('style')
+
 </head>
 
 <body>
@@ -54,6 +56,8 @@
 
   <!-- Template Main JS File -->
   <script src="{{ url('assets/js/main.js') }}"></script>
+
+  @yield('script')
 
 </body>
 

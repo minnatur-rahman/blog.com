@@ -23,5 +23,5 @@ Route::post('forgot-password', [AuthController::class, 'forgotPassword'])->name(
 Route::get('reset/{token}', [AuthController::class, 'reset'])->name('reset');
 Route::post('reset/{token}', [AuthController::class, 'post_reset'])->name('post.reset');
 
-Route::get('panel/dashboard',[DashboardController::class, 'dashboard']);
+Route::get('panel/dashboard',[DashboardController::class, 'dashboard'])->name('admin.dashboard');
   

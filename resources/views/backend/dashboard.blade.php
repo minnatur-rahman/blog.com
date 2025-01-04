@@ -1,4 +1,5 @@
 @extends('backend.layouts.app')
+@section('style')
 @section('content')
     <div class="pagetitle">
       <h1>Dashboard</h1>
@@ -644,6 +645,7 @@
       </div>
     </section>
 
+@section('script')
 @endsection
 
  
