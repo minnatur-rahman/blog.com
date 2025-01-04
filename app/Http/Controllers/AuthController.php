@@ -38,6 +38,7 @@ class AuthController extends Controller
         $user = User::where('remember_token', '=', $token)->first();
        if(!empty($user))
        {
+        
             return view('auth.forgot');
        }
        else
