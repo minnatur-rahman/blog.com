@@ -102,8 +102,7 @@ class AuthController extends Controller
         {
           if(!empty(Auth::user()->email_verified_at))
           {
-            echo "successfully";
-            die;
+                return redirect()->route('admin.dashboard');
           }
           else 
           {
@@ -167,6 +166,12 @@ class AuthController extends Controller
         {
             abort(404);
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 
 }
