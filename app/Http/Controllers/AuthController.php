@@ -39,7 +39,8 @@ class AuthController extends Controller
        if(!empty($user))
        {
         
-            return view('auth.forgot');
+            $data['meta_title'] = 'Reset Password';
+            return view('auth.reset',$data);
        }
        else
        {
