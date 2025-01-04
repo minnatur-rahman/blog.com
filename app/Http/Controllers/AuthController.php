@@ -56,13 +56,18 @@ class AuthController extends Controller
             if($request->password == $request->cpassword)
             {
                 $user->password = Hash::make($request->password);
-                $user->email_verified_at =date('Y-m-d H:i:s');
+                if(empty($user->email_verified_at))
+                {
+                    $user->email_verified_at =date('Y-m-d H:i:s');
+                }
                 $user-> remember_token = Str::random(40);        
                 $user->save();
+
+                return redirect('login')->with('success', 'Password successfully reset');
             }
             else
             {
-                return redirect()->back()->with('success', 'Password and Confirm Password does not match');
+                return redirect()->back()->with('errors', 'Password and Confirm Password does not match');
             }
         }
         else
