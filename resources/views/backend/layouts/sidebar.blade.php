@@ -18,21 +18,21 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('panel/category/list') }}">
+        <a class="nav-link collapsed" href="{{ url('panel/category/list') }}">
           <i class="bi bi-person"></i>
           <span>Catetory</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('panel/blog/list') }}">
+        <a class="nav-link collapsed" href="{{ url('panel/blog/list') }}">
           <i class="bi bi-person"></i>
           <span>Blogs</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('panel/blog/list') }}">
+        <a class="nav-link collapsed" href="{{ url('panel/blog/list') }}">
           <i class="bi bi-question-circle"></i>
           <span>Help</span>
         </a>
