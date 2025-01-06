@@ -11,28 +11,28 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('admin.dashboard') }} ">
+        <a class="nav-link collapsed" href="{{ url('panel/user/list') }} ">
           <i class="bi bi-person"></i>
           <span>Users</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="{{ route('panel/category/list') }}">
           <i class="bi bi-person"></i>
           <span>Catetory</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="{{ route('panel/blog/list') }}">
           <i class="bi bi-person"></i>
           <span>Blogs</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="{{ route('panel/blog/list') }}">
           <i class="bi bi-question-circle"></i>
           <span>Help</span>
         </a>
