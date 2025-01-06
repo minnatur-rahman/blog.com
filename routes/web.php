@@ -28,7 +28,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'adminuser'], function(){
     Route::get('panel/dashboard',[DashboardController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('panel/user/list',[UserController::class, 'user']);
-    
+    Route::get('panel/user/list',[UserController::class, 'user'])->name('user.list');
+
 });
   
