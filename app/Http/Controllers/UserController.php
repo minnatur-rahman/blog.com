@@ -8,6 +8,6 @@ class UserController extends Controller
 {
     public function user()
     {
-        
+        return view('backend.user.list');
     }
 }
