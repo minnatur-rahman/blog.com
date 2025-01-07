@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function user()
     {
-        return view('backend.user.list');
+        $data['meta_title'] = 'Uaer List';
+        return view('backend.user.list',$data);
     }
 }

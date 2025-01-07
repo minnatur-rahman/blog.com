@@ -2,17 +2,16 @@
 @section('style')
 @endsection
 @section('content')
-<div class="pagetitle" style="margin: 20px">
- <h1>Users List</h1>
-</div>
-
 <section class="section">
   <div class="row">
     <div class="col-lg-12">
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Table with stripped rows</h5>
+          <h5 class="card-title">
+            Users List
+            <a href="" class="btn btn-primary" style="float: right;margin-top: -12px;">Add New</a>
+          </h5>
 
           <!-- Table with stripped rows -->
           <table class="table table-striped">
