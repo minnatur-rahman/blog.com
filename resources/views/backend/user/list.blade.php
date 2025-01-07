@@ -2,15 +2,8 @@
 @section('style')
 @endsection
 @section('content')
-<div class="pagetitle">
-  <h1>General Tables</h1>
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active">General</li>
-    </ol>
-  </nav>
+<div class="pagetitle" style="margin: 20px">
+ <h1>Users List</h1>
 </div>
 
 <section class="section">
@@ -74,7 +67,6 @@
 
         </div>
       </div>
-
     </div>
   </div>
 </section>
