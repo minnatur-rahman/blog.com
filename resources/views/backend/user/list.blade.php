@@ -23,16 +23,22 @@
                 <th scope="col">Emai Verified</th>
                 <th scope="col">Status</th>
                 <th scope="col">Created Date</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($getRecord as $value )
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
+                  <th scope="row">{{ $value->id }}</th>
+                  <td>{{ $value->name }}</td>
+                  <td>{{ $value->email }}</td>
+                  <td>{{ !empty($value->email_verified_at) ? 'Yes' : 'No' }}</td>
+                  <td>{{ !empty($value->status) ? 'Verified' : 'No' }}</td>
+                  <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
+                  <td>
+                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                  </td>
                 </tr>
               @empty
                 <tr>
@@ -49,8 +55,7 @@
     </div>
   </div>
 </section>
-
- @endsection
+@endsection
  
 @section('script')
 @endsection
