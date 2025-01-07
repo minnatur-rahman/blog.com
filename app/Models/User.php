@@ -49,4 +49,11 @@ class User extends Authenticatable
     {
         return self::find($id);
     }
+
+    static function getRecordUser()
+    {
+        return self::select('users.*')
+             ->where('is_admin', '=',0)
+             ->where('is_delete', '=',0)
+    }
 }
