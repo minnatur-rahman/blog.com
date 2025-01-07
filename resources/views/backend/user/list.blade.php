@@ -11,18 +11,18 @@
       <li class="breadcrumb-item active">General</li>
     </ol>
   </nav>
-</div><!-- End Page Title -->
+</div>
 
 <section class="section">
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-12">
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Default Table</h5>
+          <h5 class="card-title">Table with stripped rows</h5>
 
-          <!-- Default Table -->
-          <table class="table">
+          <!-- Table with stripped rows -->
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -70,14 +70,12 @@
               </tr>
             </tbody>
           </table>
-          <!-- End Default Table Example -->
+          <!-- End Table with stripped rows -->
+
         </div>
       </div>
 
-   
-
     </div>
-
   </div>
 </section>
 
