@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -22,6 +24,14 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        dd('ok');
+        // dd($request->all());
+        $save = new User;
+        $save->name = trim($request->name);
+        $save->email = trim($request->email);
+        $save->password = Hash::make($request->password);
+        $save->status = trim($request->status);
+        $save->save();
+
+        return redirect()->route('user.list')->with('success', 'Data store successfully');
     }
 }
