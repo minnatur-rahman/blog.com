@@ -10,7 +10,7 @@
         <div class="card-body">
           <h5 class="card-title">
             Users List
-            <a href="{{ route('') }}" class="btn btn-primary" style="float: right;margin-top: -12px;">Add New</a>
+            <a href="{{ route('user.add') }}" class="btn btn-primary" style="float: right;margin-top: -12px;">Add New</a>
           </h5>
 
           <!-- Table with stripped rows -->

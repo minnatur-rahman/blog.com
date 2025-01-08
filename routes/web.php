@@ -30,7 +30,9 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::get('panel/dashboard',[DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('panel/user/list',[UserController::class, 'user'])->name('user.list');
-    Route::get('panel/user/add',[UserController::class, 'add_user'])->name('user.add');
+    Route::get('panel/user/add',[UserController::class, 'add'])->name('user.add');
+    Route::get('panel/user/edit',[UserController::class, 'edit'])->name('user.edit');
+    Route::get('panel/user/delete',[UserController::class, 'delete'])->name('user.delete');
 
 });
   

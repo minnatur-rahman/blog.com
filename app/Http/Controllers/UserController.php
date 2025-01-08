@@ -13,4 +13,10 @@ class UserController extends Controller
         $data['meta_title'] = 'Uaer List';
         return view('backend.user.list',$data);
     }
+
+    public function add()
+    {
+        $data['meta_title'] = 'Add User';
+        return view('backend.user.add',$data);
+    }
 }
