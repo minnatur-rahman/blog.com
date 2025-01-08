@@ -48,7 +48,8 @@
 
             </tbody>
           </table>
-          <!-- End Table with stripped rows -->
+          
+          {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
 
         </div>
       </div>
