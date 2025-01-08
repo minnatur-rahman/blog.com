@@ -19,4 +19,9 @@ class UserController extends Controller
         $data['meta_title'] = 'Add User';
         return view('backend.user.add',$data);
     }
+
+    public function store(Request $request)
+    {
+        dd('ok');
+    }
 }
