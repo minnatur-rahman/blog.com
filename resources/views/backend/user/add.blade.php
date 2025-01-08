@@ -13,21 +13,22 @@
 
             <!-- Multi Columns Form -->
             <form class="row g-3" action="" method="POST">
+                @csrf
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" id="inputName5">
+                <input type="text" name="name" class="form-control" id="inputName5" required>
               </div>
               <div class="col-md-12">
                 <label for="inputEmail5" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="inputEmail5">
+                <input type="email" name="email" class="form-control" id="inputEmail5" required>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="inputPassword5">
+                <input type="password" name="password" class="form-control" id="inputPassword5" required>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Status</label>
-               <select name="" id="" class="form-control">
+               <select name="status" id="inputPassword5" class="form-control">
                     <option value="1">Active</option>
                     <option value="0">Inactive</option>
                </select>
