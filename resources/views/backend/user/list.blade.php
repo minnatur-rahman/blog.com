@@ -7,8 +7,8 @@
     <div class="col-lg-12">
 
       <div class="card">
+        @include('layouts._message')
         <div class="card-body">
-          @include('layouts._message')
           <h5 class="card-title">
             Users List
             <a href="{{ route('user.add') }}" class="btn btn-primary" style="float: right;margin-top: -12px;">Add New</a>
@@ -37,7 +37,7 @@
                   <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
-                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ route('user.edit/{id}') }}" class="btn btn-primary btn-sm">Edit</a>
                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                   </td>
                 </tr>

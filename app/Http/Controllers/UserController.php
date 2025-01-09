@@ -34,4 +34,11 @@ class UserController extends Controller
 
         return redirect()->route('user.list')->with('success', 'Data store successfully');
     }
+
+    public function edit($id, Request $request)
+    {
+        $data['meta_title'] = 'Add Edit';
+        return view('backend.user.edit',$data);
+    }
+
 }
