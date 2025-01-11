@@ -37,7 +37,7 @@
                   <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
-                    <a href="{{ route('user.edit', ['id' => $value->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ url('panel/user/edit'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                   </td>
                 </tr>
