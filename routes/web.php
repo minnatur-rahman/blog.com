@@ -33,7 +33,7 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::get('panel/user/add',[UserController::class, 'add'])->name('user.add');
     Route::post('panel/user/store',[UserController::class, 'store'])->name('user.store');
     Route::get('panel/user/edit/{id}',[UserController::class, 'edit']);
-    Route::get('panel/user/edit/{id}',[UserController::class, 'update']);
+    Route::post('panel/user/edit/{id}',[UserController::class, 'update']);
 
 });
   
