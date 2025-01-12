@@ -42,4 +42,21 @@ class UserController extends Controller
         return view('backend.user.edit',$data);
     }
 
+    public function update($id, Request $request)
+    {
+          // dd($request->all());
+          $save = User::getSingle($id);
+          $save->name = trim($request->name);
+          $save->email = trim($request->email);
+          if(!empty($request->password))
+          {
+            $save->password = Hash::make($request->password);
+          }
+         
+          $save->status = trim($request->status);
+          $save->save();
+  
+          return redirect()->route('user.list')->with('success', 'Data store successfully');
+    }
+
 }

@@ -25,7 +25,7 @@
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="inputPassword5" required>
-                <p style="margin-bottom: 0px;margin-top: 5px;font-size: 14px">Do you want change password so please fill pasword input box</p>
+                <p style="margin-bottom: 0px;margin-top: 5px;font-size: 18px">Do you want change password so please fill pasword input box</p>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Status</label>
