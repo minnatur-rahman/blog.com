@@ -56,7 +56,7 @@ class UserController extends Controller
           $save->status = trim($request->status);
           $save->save();
   
-          return redirect()->route('user.list')->with('success', 'Data store successfully');
+          return redirect()->route('user.list')->with('success', 'Data updated successfully');
     }
 
 }
