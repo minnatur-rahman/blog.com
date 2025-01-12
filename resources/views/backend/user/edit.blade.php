@@ -25,13 +25,13 @@
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="inputPassword5" required>
-                <p>Do you want change password so please fill pasword input box</p>
+                <p style="margin-bottom: 0px;margin-top: 5px;font-size: 14px">Do you want change password so please fill pasword input box</p>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Status</label>
                <select name="status" id="inputPassword5" class="form-control">
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
+                    <option {{ ($getRecord->status == 1) ? 'selected' : '' }} value="1">Active</option>
+                    <option {{ ($getRecord->status == 0) ? 'selected' : '' }} value="0">Inactive</option>
                </select>
               </div>
               <div class="col-md-12">
