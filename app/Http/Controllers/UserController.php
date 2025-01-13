@@ -59,4 +59,11 @@ class UserController extends Controller
           return redirect()->route('user.list')->with('success', 'Data updated successfully');
     }
 
+    public function delete($id)
+    {
+        $save = User::getSingle($id);
+        $save->delete();
+        return redirect()->route('user.list')->with('success', 'Data deleted successfully');
+    }
+
 }

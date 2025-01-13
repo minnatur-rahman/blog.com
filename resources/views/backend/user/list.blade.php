@@ -5,9 +5,8 @@
 <section class="section">
   <div class="row">
     <div class="col-lg-12">
-
-      <div class="card">
-        @include('layouts._message')
+      @include('layouts._message')
+      <div class="card">       
         <div class="card-body">
           <h5 class="card-title">
             Users List
@@ -38,7 +37,7 @@
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
                     <a href="{{ url('panel/user/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    <a onclick="return confirm('Are you sure you want to delete?');" href="{{ url('panel/user/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
                   </td>
                 </tr>
               @empty

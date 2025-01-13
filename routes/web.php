@@ -34,6 +34,7 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::post('panel/user/store',[UserController::class, 'store'])->name('user.store');
     Route::get('panel/user/edit/{id}',[UserController::class, 'edit']);
     Route::post('panel/user/edit/{id}',[UserController::class, 'update']);
+    Route::get('panel/user/delete/{id}',[UserController::class, 'delete']);
 
 });
   
