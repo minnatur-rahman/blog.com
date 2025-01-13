@@ -17,14 +17,16 @@
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Name</label>
                 <input type="text" name="name" value="{{ $getRecord->name }}" class="form-control" id="inputName5" required>
+                <div style="color:red">{{ $errors->first('name') }}</div>
               </div>
               <div class="col-md-12">
                 <label for="inputEmail5" class="form-label">Email</label>
-                <input type="email" name="email" value="{{ $getRecord->email }}" class="form-control" id="inputEmail5" required>
+                <input type="email" name="email" value="{{ $getRecord->email }}" class="form-control" id="inputEmail5" required> <div style="color:red">{{ $errors->first('email') }}</div>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="inputPassword5">
+                <input type="password" name="password" class="form-control" id="inputPassword5" required>
+                <div style="color:red">{{ $errors->first('password') }}</div>
                 <p style="margin-bottom: 0px;margin-top: 5px;font-size: 18px">Do you want change password so please fill pasword input box</p>
               </div>
               <div class="col-md-12">

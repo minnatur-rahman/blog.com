@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,12 +26,11 @@ class UserController extends Controller
     {
         // dd($request->all());
 
-        $validator = Validated::make($request->all(), [
+       request()->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-                  
-        ]);
+       ]);
 
         $save = new User;
         $save->name = trim($request->name);
@@ -53,6 +52,12 @@ class UserController extends Controller
     public function update($id, Request $request)
     {
           // dd($request->all());
+          request()->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email'.$id,
+            
+        ]);
+
           $save = User::getSingle($id);
           $save->name = trim($request->name);
           $save->email = trim($request->email);
