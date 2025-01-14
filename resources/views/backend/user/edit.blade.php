@@ -21,7 +21,7 @@
               </div>
               <div class="col-md-12">
                 <label for="inputEmail5" class="form-label">Email</label>
-                <input type="email" name="email" value="{{ $getRecord->email }}" class="form-control" id="inputEmail5" required> <div style="color:red">{{ $errors->first('email') }}</div>
+                <input type="email" name="email" value="{{ $getRecord->email }}" class="form-control" id="inputEmail5"> <div style="color:red">{{ $errors->first('email') }}</div>
               </div>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Password</label>
