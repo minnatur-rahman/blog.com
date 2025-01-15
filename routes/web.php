@@ -37,7 +37,7 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::post('panel/user/edit/{id}',[UserController::class, 'update']);
     Route::get('panel/user/delete/{id}',[UserController::class, 'delete']);
 
-    Route::get('panel/category/list',[CategoryController::class, 'user']);
+    Route::get('panel/category/list',[CategoryController::class, 'category']);
     Route::get('panel/category/add',[CategoryController::class, 'add']);
     Route::post('panel/category/store',[CategoryController::class, 'store']);
     Route::get('panel/category/edit/{id}',[CategoryController::class, 'edit']);
