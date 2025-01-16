@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('title');
+            $table->string('meta_title');
             $table->string('meta_description');
             $table->string('meta_keywords');
+            $table->tinyInteger('status');
+            $table->tinyInteger('is_delete');
             $table->timestamps();
         });
     }
