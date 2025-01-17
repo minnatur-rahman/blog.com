@@ -11,7 +11,13 @@ class CategoryController extends Controller
     public function category()
     {
         $data['getRecord'] = Category::getRecord();
-        $data['meta_title'] = 'Login';
+        $data['meta_title'] = 'Categories';
         return view('backend.category.list',$data);
+    }
+
+    public function add()
+    {
+        $data['meta_title'] = 'Add Category';
+        return view('backend.category.add',$data);
     }
 }

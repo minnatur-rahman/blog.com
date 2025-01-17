@@ -45,7 +45,7 @@ class UserController extends Controller
     public function edit($id, Request $request)
     {
         $data['getRecord'] = User::getSingle($id);
-        $data['meta_title'] = 'Add Edit';
+        $data['meta_title'] = 'Edit User';
         return view('backend.user.edit',$data);
     }
 
