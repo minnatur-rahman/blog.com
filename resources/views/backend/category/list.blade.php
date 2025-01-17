@@ -19,8 +19,11 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Emai Verified</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Title</th>
+                <th scope="col">Meta Title</th>
+                <th scope="col">Meta Description</th>
+                <th scope="col">Meta Keywords</th>
                 <th scope="col">Status</th>
                 <th scope="col">Created Date</th>
                 <th scope="col">Action</th>
@@ -31,7 +34,7 @@
                 <tr>
                   <th scope="row">{{ $value->id }}</th>
                   <td>{{ $value->name }}</td>
-                  <td>{{ $value->email }}</td>
+                  <td>{{ $value->slug }}</td>
                   <td>{{ !empty($value->email_verified_at) ? 'Yes' : 'No' }}</td>
                   <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
