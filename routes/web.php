@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -43,6 +44,8 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::get('panel/category/edit/{id}',[CategoryController::class, 'edit']);
     Route::post('panel/category/edit/{id}',[CategoryController::class, 'update']);
     Route::get('panel/category/delete/{id}',[CategoryController::class, 'delete']);
+
+    Route::get('panel/blog/list',[BlogController::class, 'blog']);
 
 });
   
