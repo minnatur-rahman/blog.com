@@ -19,8 +19,21 @@
                 <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="inputName5" required>
                 <div style="color:red">{{ $errors->first('name') }}</div>
               </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Title</label>
+                <input type="text" name="title" value="{{ old('title') }}" class="form-control" id="inputName5" required>
+                <div style="color:red">{{ $errors->first('title') }}</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Meta Title</label>
+                <input type="text" name="meta_title" value="{{ old('meta_title') }}" class="form-control" id="inputName5" required>
+                <div style="color:red">{{ $errors->first('meta_title') }}</div>
+              </div>
+
              
-              
+              <hr>
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Status</label>
                <select name="status" id="inputPassword5" class="form-control">
