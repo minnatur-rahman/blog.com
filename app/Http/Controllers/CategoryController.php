@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -25,6 +26,7 @@ class CategoryController extends Controller
     {
         $save = new Category;
         $save->name = trim($request->name);
+        $save->slug = trim(Str::slug($request->name));
         $save->title = trim($request->title);
         $save->meta_title = trim($request->meta_title);
         $save->meta_description = trim($request->meta_description);
