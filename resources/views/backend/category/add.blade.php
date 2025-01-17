@@ -12,7 +12,7 @@
             <h5 class="card-title">Add New Catetory</h5>
 
             <!-- Multi Columns Form -->
-            <form class="row g-3" action="{{ route('user.store') }}" method="POST">
+            <form class="row g-3" action="{{ url('panel/category/store') }}" method="POST">
                 @csrf
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Name</label>
