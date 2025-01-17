@@ -9,7 +9,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Add New Catetory</h5>
+            <h5 class="card-title">Edit Catetory</h5>
 
             <!-- Multi Columns Form -->
             <form class="row g-3" action="{{ url('panel/category/store') }}" method="POST">
@@ -52,7 +52,7 @@
                 <label for="inputPassword5" class="form-label">Status *</label>
                <select name="status" id="inputPassword5" class="form-control">
                     <option {{ ($getRecord->status == 1) ? 'selected' : '' }} value="1">Active</option>
-                    <option {{ ($getRecord->status == 1) ? 'selected' : '' }} value="0">Inactive</option>
+                    <option {{ ($getRecord->status == 0) ? 'selected' : '' }} value="0">Inactive</option>
                </select>
               </div>
               <div class="col-md-12">

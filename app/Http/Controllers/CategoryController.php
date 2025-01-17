@@ -34,7 +34,7 @@ class CategoryController extends Controller
         $save->status = trim($request->status);
         $save->save();
 
-        return redirect('panel/category/list')->with('success', 'Data store successfully');
+        return redirect('panel/category/list')->with('success', 'Category store successfully');
     }
 
     public function edit($id, Request $request)
@@ -42,5 +42,20 @@ class CategoryController extends Controller
         $data['getRecord'] = Category::getSingle($id);
         $data['meta_title'] = 'Edit Category';
         return view('backend.category.edit',$data);
+    }
+
+    public function update($id, Request $request)
+    {
+        $save = Category::getSingle($id);
+        $save->name = trim($request->name);
+        $save->slug = trim(Str::slug($request->name));
+        $save->title = trim($request->title);
+        $save->meta_title = trim($request->meta_title);
+        $save->meta_description = trim($request->meta_description);
+        $save->meta_keywords = trim($request->meta_keywords);
+        $save->status = trim($request->status);
+        $save->save();
+
+        return redirect('panel/category/list')->with('success', 'Category successfully updated');
     }
 }
