@@ -36,4 +36,11 @@ class CategoryController extends Controller
 
         return redirect('panel/category/list')->with('success', 'Data store successfully');
     }
+
+    public function edit($id, Request $request)
+    {
+        $data['getRecord'] = Category::getSingle($id);
+        $data['meta_title'] = 'Edit Category';
+        return view('backend.category.edit',$data);
+    }
 }

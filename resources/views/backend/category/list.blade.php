@@ -42,8 +42,8 @@
                   <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
-                    <a href="{{ url('panel/user/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    <a onclick="return confirm('Are you sure you want to delete?');" href="{{ url('panel/user/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{{ url('panel/category/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a onclick="return confirm('Are you sure you want to delete?');" href="{{ url('panel/category/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
                   </td>
                 </tr>
               @empty
