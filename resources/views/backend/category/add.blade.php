@@ -21,24 +21,38 @@
               </div>
 
               <div class="col-md-12">
-                <label for="inputName5" class="form-label">Title</label>
+                <label for="inputName5" class="form-label">Title *</label>
                 <input type="text" name="title" value="{{ old('title') }}" class="form-control" id="inputName5" required>
                 <div style="color:red">{{ $errors->first('title') }}</div>
               </div>
 
               <div class="col-md-12">
-                <label for="inputName5" class="form-label">Meta Title</label>
+                <label for="inputName5" class="form-label">Meta Title *</label>
                 <input type="text" name="meta_title" value="{{ old('meta_title') }}" class="form-control" id="inputName5" required>
                 <div style="color:red">{{ $errors->first('meta_title') }}</div>
               </div>
 
+              
+              <div class="col-md-12">
+                <label class="form-label">Meta Description</label>
+               <textarea class="form-control" name="meta_description"></textarea>
+                <div style="color:red">{{ $errors->first('meta_description') }}</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Meta Keywords</label>
+                <input type="text" name="meta_keywords" value="{{ old('meta_keywords') }}" class="form-control" id="inputName5">
+                <div style="color:red">{{ $errors->first('meta_keywords') }}</div>
+              </div>
+
+
              
               <hr>
               <div class="col-md-12">
-                <label for="inputPassword5" class="form-label">Status</label>
+                <label for="inputPassword5" class="form-label">Status *</label>
                <select name="status" id="inputPassword5" class="form-control">
-                    <option {{ (old('status') == 1) ? 'selected' : '' }} value="1">Active</option>
-                    <option {{ (old('status') == 0) ? 'selected' : '' }} value="0">Inactive</option>
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
                </select>
               </div>
               <div class="col-md-12">
