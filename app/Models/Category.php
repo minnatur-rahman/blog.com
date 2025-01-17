@@ -13,6 +13,6 @@ class Category extends Model
         return self::select('categories.*')
                 ->where('is_delete', '=', 0)
                 ->orderBy('id', 'desc')
-                ->paginate(5);
+                ->paginate(2);
     }
 }

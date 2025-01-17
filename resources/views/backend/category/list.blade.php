@@ -35,8 +35,11 @@
                   <th scope="row">{{ $value->id }}</th>
                   <td>{{ $value->name }}</td>
                   <td>{{ $value->slug }}</td>
-                  <td>{{ !empty($value->email_verified_at) ? 'Yes' : 'No' }}</td>
-                  <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
+                  <td>{{ $value->title }}</td>
+                  <td>{{ $value->meta_title }}</td>
+                  <td>{{ $value->meta_description }}</td>
+                  <td>{{ $value->meta_keywords }}</td>
+                  <td>{{ empty($value->status) ? 'Active' : 'Inactive' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
                     <a href="{{ url('panel/user/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
