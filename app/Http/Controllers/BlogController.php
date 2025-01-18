@@ -12,4 +12,10 @@ class BlogController extends Controller
         $data['meta_title'] = 'Blogs';
         return view('backend.blog.list',$data);
     }
+
+    public function add()
+    {
+        $data['meta_title'] = 'Add Blog';
+        return view('backend.blog.add',$data);
+    }
 }
