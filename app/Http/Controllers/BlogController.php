@@ -8,7 +8,7 @@ class BlogController extends Controller
 {
     public function blog()
     {
-        $data['getRecord'] = Category::getRecord();
+        // $data['getRecord'] = Category::getRecord();
         $data['meta_title'] = 'Blogs';
         return view('backend.blog.list',$data);
     }

@@ -9,8 +9,9 @@
       <div class="card">       
         <div class="card-body">
           <h5 class="card-title">
-            Category List
-            <a href="{{ url('panel/category/add') }}" class="btn btn-primary" style="float: right;margin-top: -12px;">Category Add</a>
+            
+            Blog List
+            <a href="{{ url('panel/blog/add') }}" class="btn btn-primary" style="float: right;margin-top: -12px;">Add New</a>
           </h5>
 
           <!-- Table with stripped rows -->
@@ -30,7 +31,7 @@
               </tr>
             </thead>
             <tbody>
-              @forelse ($getRecord as $value )
+              {{-- @forelse ($getRecord as $value )
                 <tr>
                   <th scope="row">{{ $value->id }}</th>
                   <td>{{ $value->name }}</td>
@@ -50,12 +51,12 @@
                 <tr>
                   <td colspan="100%">Record not found</td>
                 </tr>
-              @endforelse
+              @endforelse --}}
 
             </tbody>
           </table>
           
-          {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
+          {{-- {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!} --}}
 
         </div>
       </div>

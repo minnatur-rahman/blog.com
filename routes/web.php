@@ -46,6 +46,7 @@ Route::group(['middleware' => 'adminuser'], function(){
     Route::get('panel/category/delete/{id}',[CategoryController::class, 'delete']);
 
     Route::get('panel/blog/list',[BlogController::class, 'blog']);
+    Route::get('panel/blog/add',[BlogController::class, 'add']);
 
 });
   
