@@ -33,7 +33,7 @@
 
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Description *</label>
-               <textarea name="description" id="inputName5" class="form-control"></textarea>
+               <textarea name="description" id="inputName5" class="form-control tinymce-editor"></textarea>
               </div>
 
               <div class="col-md-12">
@@ -56,10 +56,10 @@
               <hr>
 
               <div class="col-md-12">
-                <label for="inputPassword5" class="form-label">Status *</label>
-               <select name="status" id="inputPassword5" class="form-control">
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
+                <label for="inputPassword5" class="form-label">Publish *</label>
+               <select name="is_publish" id="inputPassword5" class="form-control">
+                    <option value="1">No</option>
+                    <option value="0">Yes</option>
                </select>
               </div>
 
@@ -70,7 +70,7 @@
                     <option value="0">Inactive</option>
                </select>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-12" style="margin-top: 30px">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form><!-- End Multi Columns Form -->
