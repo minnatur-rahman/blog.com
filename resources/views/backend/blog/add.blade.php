@@ -32,6 +32,16 @@
               </div>
 
               <div class="col-md-12">
+                <label for="inputName5" class="form-label">Description *</label>
+               <textarea name="description" id="inputName5" class="form-control"></textarea>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Tags</label>
+                <input type="text" name="tags" class="form-control" id="inputName5">
+              </div>
+
+              <div class="col-md-12">
                 <label class="form-label">Meta Description</label>
                <textarea class="form-control" name="meta_description"></textarea>
                 <div style="color:red">{{ $errors->first('meta_description') }}</div>
@@ -43,9 +53,16 @@
                 <div style="color:red">{{ $errors->first('meta_keywords') }}</div>
               </div>
 
-
-             
               <hr>
+
+              <div class="col-md-12">
+                <label for="inputPassword5" class="form-label">Status *</label>
+               <select name="status" id="inputPassword5" class="form-control">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+               </select>
+              </div>
+
               <div class="col-md-12">
                 <label for="inputPassword5" class="form-label">Status *</label>
                <select name="status" id="inputPassword5" class="form-control">
