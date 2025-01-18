@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -15,6 +16,7 @@ class BlogController extends Controller
 
     public function add()
     {
+        $data['getCategory'] = Category::getCategory();
         $data['meta_title'] = 'Add Blog';
         return view('backend.blog.add',$data);
     }

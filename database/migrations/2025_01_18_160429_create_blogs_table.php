@@ -21,8 +21,9 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
-            $table->tinyInteger('is_publish')->nullable();
-            $table->tinyInteger('status')->nullable();
+            $table->tinyInteger('is_publish')->default(0);
+            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('is_delete')->default(0);
             $table->datetimes();
         });
     }
