@@ -12,7 +12,7 @@
             <h5 class="card-title">Add New Blog</h5>
 
             <!-- Multi Columns Form -->
-            <form class="row g-3" action="{{ url('panel/blog/store') }}" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="{{ url('panel/blog/insert') }}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Title *</label>

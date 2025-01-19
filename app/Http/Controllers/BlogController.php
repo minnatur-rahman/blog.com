@@ -20,4 +20,9 @@ class BlogController extends Controller
         $data['meta_title'] = 'Add Blog';
         return view('backend.blog.add',$data);
     }
+
+    public function insert(Request $request)
+    {
+        dd($request->all());
+    }
 }
