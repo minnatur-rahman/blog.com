@@ -23,6 +23,9 @@
                 <label for="inputName5" class="form-label">Category *</label>
                 <select name="category_id" class="form-control">
                     <option value="">Select Category</option>
+                    @foreach ($getCategory as $value )
+                    <option value="{{ $value->id }}">{{ $value->name }}</option>
+                    @endforeach
                 </select>
               </div>
 
