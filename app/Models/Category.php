@@ -20,4 +20,12 @@ class Category extends Model
                 ->orderBy('id', 'desc')
                 ->paginate(10);
     }
+
+    static function getCategory()
+    {
+        return self::select('categories.*')
+        ->where('status', '=', 1)
+        ->where('is_delete', '=', 0)
+        ->get();
+    }
 }
