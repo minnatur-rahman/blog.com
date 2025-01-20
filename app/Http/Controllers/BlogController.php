@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,8 @@ class BlogController extends Controller
 
     public function insert(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $save = new Blog;
+        $save->title = trim($request->title);
     }
 }
