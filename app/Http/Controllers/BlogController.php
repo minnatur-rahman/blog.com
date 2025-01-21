@@ -38,7 +38,11 @@ class BlogController extends Controller
 
         $slug = str::slug($request->slug);
         
-        $checkslug = Blog::where('slug', '=', $slug);
+        $checkslug = Blog::where('slug', '=', $slug)->first();
+        if(!empty($checkslug))
+        {
+            
+        }
         
     }
 }
