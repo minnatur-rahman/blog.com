@@ -36,7 +36,7 @@ class BlogController extends Controller
         $save->status = trim($request->status);
         $save->save();
 
-        $slug = str::slug($request->slug);
+        $slug = str::slug($request->title);
         
         $checkslug = Blog::where('slug', '=', $slug)->first();
         if(!empty($checkslug))
@@ -48,6 +48,14 @@ class BlogController extends Controller
             $dbslug = $slug;
         }
         $save->slug = $dbslug;
+
+        if(!empty($request->file('image_file')))
+        {
+            $ext = $request->file('image_file')->getClientOriginalExtension();
+            $file = $request->file('image_file');
+            $filename = $dbslug.'.'.$ext;
+
+        }
         
     }
 }
