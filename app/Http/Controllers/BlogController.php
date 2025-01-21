@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use str;
 
 class BlogController extends Controller
 {
@@ -27,5 +28,17 @@ class BlogController extends Controller
         // dd($request->all());
         $save = new Blog;
         $save->title = trim($request->title);
+        $save->category_id = trim($request->category_id);
+        $save->description = trim($request->description);
+        $save->meta_description = trim($request->meta_description);
+        $save->meta_keywords = trim($request->meta_keywords);
+        $save->is_publish = trim($request->is_publish);
+        $save->status = trim($request->status);
+        $save->save();
+
+        $slug = str::slug($request->slug);
+        
+        $checkslug = Blog::where('slug', '=', $slug);
+        
     }
 }
