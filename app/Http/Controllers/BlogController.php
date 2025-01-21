@@ -54,6 +54,8 @@ class BlogController extends Controller
             $ext = $request->file('image_file')->getClientOriginalExtension();
             $file = $request->file('image_file');
             $filename = $dbslug.'.'.$ext;
+            $file->move('upload/blog/', $filename);
+            $save->image_file = $filename;
 
         }
         
