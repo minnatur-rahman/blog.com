@@ -56,8 +56,8 @@ class BlogController extends Controller
             $filename = $dbslug.'.'.$ext;
             $file->move('upload/blog/', $filename);
             $save->image_file = $filename;
-
         }
+        $save->save();
         
     }
 }
