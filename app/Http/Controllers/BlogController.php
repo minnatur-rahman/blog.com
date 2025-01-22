@@ -58,6 +58,8 @@ class BlogController extends Controller
             $save->image_file = $filename;
         }
         $save->save();
+
+        return redirect('palel/blog/list')->with('success', 'Blog successfully created');
         
     }
 }
