@@ -40,6 +40,7 @@
                   <td>{{ $value->meta_description }}</td>
                   <td>{{ $value->meta_keywords }}</td>
                   <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
+                  <td>{{ !empty($value->is_publish) ? 'Yes' : 'No' }}</td>
                   <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
                   <td>
                     <a href="{{ url('panel/blog/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
