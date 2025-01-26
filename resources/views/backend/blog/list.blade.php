@@ -25,6 +25,7 @@
                 <th scope="col">Meta Description</th>
                 <th scope="col">Meta Keywords</th>
                 <th scope="col">Status</th>
+                <th scope="col">Publish</th>
                 <th scope="col">Created Date</th>
                 <th scope="col">Action</th>
               </tr>
