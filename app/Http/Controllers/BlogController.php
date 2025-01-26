@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use str;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
     public function blog()
     {
-        // $data['getRecord'] = Category::getRecord();
+        $data['getRecord'] = Blog::getRecord();
         $data['meta_title'] = 'Blogs';
         return view('backend.blog.list',$data);
     }
@@ -59,7 +59,7 @@ class BlogController extends Controller
         }
         $save->save();
 
-        return redirect('palel/blog/list')->with('success', 'Blog successfully created');
+        return redirect('panel/blog/list')->with('success', 'Blog successfully created');
         
     }
 }

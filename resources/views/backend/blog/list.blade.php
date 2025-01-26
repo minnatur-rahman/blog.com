@@ -31,7 +31,7 @@
               </tr>
             </thead>
             <tbody>
-              {{-- @forelse ($getRecord as $value )
+              @forelse ($getRecord as $value )
                 <tr>
                   <th scope="row">{{ $value->id }}</th>
                   <td>{{ $value->name }}</td>
@@ -51,12 +51,12 @@
                 <tr>
                   <td colspan="100%">Record not found</td>
                 </tr>
-              @endforelse --}}
+              @endforelse
 
             </tbody>
           </table>
           
-          {{-- {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!} --}}
+          {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
 
         </div>
       </div>
