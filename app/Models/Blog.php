@@ -13,7 +13,7 @@ class Blog extends Model
 
     static public function getRecord()
     {
-        return self::select('blog.*', 'users.name as user_name', 'categories.name as category_name')
+        return self::select('blogs.*', 'users.name as user_name', 'categories.name as category_name')
                   ->join('users', 'users.id', '=', 'blogs.user_id')
                   ->join('categories', 'categories.id', '=', 'blogs.category_id')
                   ->where('blogs.is_delete', '=', 0)

@@ -30,30 +30,29 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody>
-              @forelse ($getRecord as $value )
-                <tr>
-                  <th scope="row">{{ $value->id }}</th>
-                  <td>{{ $value->user_name }}</td>
-                  <td>{{ $value->title }}</td>
-                  <td>{{ $value->category_name }}</td>
-                  <td>{{ $value->meta_description }}</td>
-                  <td>{{ $value->meta_keywords }}</td>
-                  <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
-                  <td>{{ !empty($value->is_publish) ? 'Yes' : 'No' }}</td>
-                  <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
-                  <td>
-                    <a href="{{ url('panel/blog/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    <a onclick="return confirm('Are you sure you want to delete?');" href="{{ url('panel/blog/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                  </td>
-                </tr>
-              @empty
-                <tr>
-                  <td colspan="100%">Record not found</td>
-                </tr>
-              @endforelse
-
-            </tbody>
+           <tbody>
+            @forelse ( $getRecord as $value )
+              <tr>
+                <th scope="row">{{ $value->id }}</th>
+                <td>{{ $value->user_name }}</td>
+                <td>{{ $value->title }}</td>
+                <td>{{ $value->category_name }}</td>
+                <td>{{ $value->meta_description }}</td>
+                <td>{{ $value->meta_keywords }}</td>
+                <td>{{ !empty($value->status) ? 'Active' : 'Inactive' }}</td>
+                <td>{{ !empty($value->is_publish) ? 'Yes' : 'No' }}</td>
+                <td>{{ date('d-m-Y H:i A',strtotime($value->created_at)) }}</td>
+                <td>
+                  <a href="{{ url('panel/blog/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                  <a onclick="return confirm('Are you sure you want to delete?');" href="{{ url('panel/blog/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+            @empty
+              <tr>
+                <td colspan="100%">Record not found</td>
+              </tr>
+            @endforelse
+           </tbody>
           </table>
           
           {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
